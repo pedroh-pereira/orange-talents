@@ -1,4 +1,4 @@
-package br.com.zup.demo.controllers;
+package br.com.zup.orange.talents.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,15 +6,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zup.demo.dto.ClientDTO;
-import br.com.zup.demo.mappers.ClientMapper;
-import br.com.zup.demo.models.Client;
-import br.com.zup.demo.repository.ClientRepository;
+import br.com.zup.orange.talents.dto.ClientDTO;
+import br.com.zup.orange.talents.mappers.ClientMapper;
+import br.com.zup.orange.talents.models.Client;
+import br.com.zup.orange.talents.repository.ClientRepository;
 
 /**
  * ClientController
@@ -32,7 +33,7 @@ public class ClientController {
   }
 
   @PostMapping
-  public ResponseEntity<Client> create(@RequestBody ClientDTO dto) {
+  public ResponseEntity<Client> create(@RequestBody @Validated ClientDTO dto) {
           Client savedItem = repository.save(mapper.toEntity(dto));
           return new ResponseEntity<>(savedItem, HttpStatus.CREATED);
   }

@@ -1,4 +1,4 @@
-package br.com.zup.demo.models;
+package br.com.zup.orange.talents.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

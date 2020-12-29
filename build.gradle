@@ -22,20 +22,13 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
+	compileOnly 'org.projectlombok:lombok'
 	compileOnly 'org.mapstruct:mapstruct:1.4.1.Final'
+	annotationProcessor 'org.projectlombok:lombok'
   annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
-  testAnnotationProcessor 'org.mapstruct:mapstruct-processor:1.4.1.Final'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'javax.validation:validation-api'
-}
-
-tasks.withType(JavaCompile) {
-    options.compilerArgs = [
-            '-Amapstruct.suppressGeneratorTimestamp=true'
-    ]
+	compile 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 test {

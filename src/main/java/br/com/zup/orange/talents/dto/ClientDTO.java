@@ -1,9 +1,12 @@
-package br.com.zup.demo.dto;
+package br.com.zup.orange.talents.dto;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 import lombok.Data;
 
@@ -16,10 +19,10 @@ public class ClientDTO {
   private String name;
   
   @NotBlank(message = "Email nulo ou em branco")
-  @Pattern(message = "Email inválido", regexp="\\b[A-Z0-9._%-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b")
+  @Email(message = "Email inválido")
   private String email;
 
   @NotBlank(message = "CPF nulo ou em branco")
-  @Pattern(message = "CPF inválido", regexp = "^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}))$")
+  @CPF(message = "CPF inválido")
   private String cpf;
 }
