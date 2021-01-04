@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "5b2330e6-5f67-45a1-83c0-17b6ef4b46b7",
+		"name": "Orange Talents",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Save Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Neymar Jr\",\n    \"email\": \"neymarjr@neymar.com.br\",\n    \"cpf\": \"96672123270\",\n    \"birthday\":\"1992-02-05\",\n    \"status\": \"1\",\n    \"address\": {\n        \"street\": \"Av. Dr. Carlos de Campos\",\n        \"number\": 653,\n        \"complement\": \"Bloco 12, Ap.34\",\n        \"neighborhood\": \"Vila Industrial\",\n        \"city\": \"Campinas\",\n        \"state\": \"SP\",\n        \"zipCode\": \"13035610\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/customers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":11,\n    \"name\": \"Neymar da Silva Santos Júnior\",\n    \"email\": \"neymarjr@neymar.com.br\",\n    \"cpf\": \"96672123270\",\n    \"birthday\":\"1992-02-05\",\n    \"status\": \"1\",\n    \"address\": {\n        \"street\": \"Av. Dr. Carlos de Campos\",\n        \"number\": 653,\n        \"complement\": \"Bloco 12, Ap.34\",\n        \"neighborhood\": \"Vila Industrial\",\n        \"city\": \"Campinas\",\n        \"state\": \"SP\",\n        \"zipCode\": \"13035610\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/customers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"1"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers?name=Ney&page=1&limit=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Ney"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customers/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customers",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Save Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer\":{\n      \"id\":1\n  },\n  \"agency\":4004,\n  \"digitAgency\":2,\n  \"accountNumber\":555555,\n  \"accountDigit\":1,\n  \"balance\":100.00,\n  \"accountStatus\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/accounts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accounts"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Update Account",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":1,\n  \"customer\":{\n      \"id\":1\n  },\n  \"agency\":4004,\n  \"digitAgency\":2,\n  \"accountNumber\":123,\n  \"accountDigit\":1,\n  \"balance\":0,\n  \"accountStatus\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/accounts/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accounts",
+								"2"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/accounts/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						},
+						"description": "    "
+					},
+					"response": []
+				},
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/orange-talents/accounts/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"orange-talents",
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find filters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/accounts?agency=1&page=1&limit=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "agency",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/accounts/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"accounts",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080/orange-talents"
+		}
+	]
+}
